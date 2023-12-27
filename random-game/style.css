@@ -1,0 +1,370 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Montserrat:ital@0;1&family=Press+Start+2P&display=swap');
+
+*{
+    /* font-family: 'Montserrat', sans-serif; */
+    font-family: 'Press Start 2P', cursive;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+a{
+    text-decoration: none;
+}
+
+.container {
+    padding: 3px 15px 0px 15px;
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+}
+
+/* левая сторона ***************************************************** */
+.gun{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 15px;
+    color: rgb(255, 196, 0);
+    margin-bottom: 150px;
+    background-color: rgb(104, 102, 102);
+    border-radius: 5px;
+    padding: 5px 10px 15px 10px;
+    font-size: 15px;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.btn{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 13px;
+    color: rgb(255, 196, 0);
+    background-color: rgb(173, 138, 138);
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.btn:hover{
+    transform: scale(1.08);
+}
+
+.btn-active{
+    transform: scale(1.08);
+    background-color: rgba(255, 99, 71, 0.87);
+}
+
+.score-cont{
+    margin-bottom: 50px;
+    background-color: rgb(104, 102, 102);
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.score-cont-show{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 50px;
+    color: rgb(255, 196, 0);
+}
+
+.score-destoy{
+    display: flex;
+    justify-content: space-between;
+}
+
+.score-title{
+    font-size: 15px;
+    color: rgb(255, 196, 0);
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.score {
+    font-size: 50px;
+    color: red;
+}
+
+.start{
+    font-size: 30px;
+    width: 245px;
+    background-color: tomato;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 5px;
+    cursor: pointer;
+    transition: 0.5s;
+    font-size: 20px;
+} 
+
+.active-start{
+    background-color: rgb(255, 196, 0);
+}
+
+.ast-img{
+    width: 50px;
+    height: 50px;
+}
+
+.start:hover{
+    transform: scale(1.1);
+}
+
+/* игровое поле ******************************* */
+.wrapper {
+    width:50%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+      
+#game {
+    width: 100%;
+}
+    
+canvas{
+    cursor: none;
+}
+
+/* модалки победы и проигрыша ************************************************ */
+.game-win,
+.game-over{
+    background-color: #161616c9;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0%;
+    left:0%;
+    visibility: hidden;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* gap: 50px; */
+}
+
+.game-win-text{
+    text-align: center;
+    font-size: 60px;
+    color: tomato;
+    margin-bottom: 150px;
+}   
+
+.game-over-text{
+    text-align: center;
+    font-size: 150px;
+    color: tomato;
+}
+
+.start-game1,
+.start-game2{
+    border: none;
+    border-radius: 8px;
+    background-color: rgb(27, 25, 25);
+    color:  rgb(255, 196, 0);
+    font-size: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+    visibility: hidden;
+    padding: 12px;
+    transition: 0.5s;
+}
+
+.start-game1:hover,
+.start-game2:hover {
+    background-color:rgb(255, 196, 0);
+    color:rgb(27, 25, 25);
+}
+
+/* модалка заставки перед игрой **************************************** */
+.modal{
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    z-index: 1;
+    position: fixed;
+}
+
+.img-modal{
+    height: 60vh;
+    margin-bottom: 20px;
+}
+
+.input {
+    border: none;
+    border-radius: 8px;
+    outline-color: tomato;
+    margin-bottom: 20px;
+    font-size: 15px;
+    padding: 5px 5px 5px 10px;
+    width: 230px;
+}
+
+.start-game{
+    border: none;
+    border-radius: 8px;
+    background-color: rgb(27, 25, 25);
+    color: tomato;
+    font-size: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+    padding: 15px;
+}
+
+.start-game:hover{
+    color:rgb(27, 25, 25);
+    background-color: tomato;
+       
+}
+
+/* Accordion ************************************************************ */
+.game-results{
+    width: 200px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.accord{
+    background-color: tomato;
+    color: #444;
+    cursor: pointer;
+    padding: 15px;
+    width: 100%;
+    text-align: center;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    border-radius: 5px;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.accord:hover {
+    background-color: rgb(252, 64, 30);
+}
+
+.res{
+    padding: 0 18px;
+    overflow: hidden;
+    color: rgb(255, 196, 0);
+}
+
+.hide {
+    height: 0;
+    transition: all 0.5s ease-out;
+}
+
+.active{
+    height: 220px;
+    transition: all 0.5s ease-out;
+}
+
+.container10{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* footer ************************************************************************ */
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 20px;
+    height: 50px;
+}
+
+.footer-text {
+    color: #fff;
+}
+
+.git-logo {
+    display: flex;
+    align-items: center;
+    color: #5abef8;
+    transition: 0.5s;
+    font-size: 10px;
+}
+
+.git-logo:hover,
+.img:hover {
+    transform: scale(1.2);
+}
+
+.footer-text {
+    color: #5abef8;
+    font-size: 10px;
+}
+
+.git {
+    margin-right: 10px;
+}
+
+.img {
+    height: 30px;
+    transition: 0.5s;
+}
+
+@media (max-width: 1024px) {
+    .game-over-text{
+        font-size: 60px;
+    }
+    .game-win-text{
+        font-size: 30px;
+        margin-bottom: 5px;
+    }
+}
+
+@media (max-width: 950px) {
+    .left-side{
+        width: 25%;
+    }
+
+    .right-side{
+        width: 25%;
+    }
+
+    .score-cont,
+    .gun{
+        margin-bottom: 5px;
+    }
+    .start{
+        width: 95%;
+    }
+    .game-over-text{
+        font-size: 60px;
+    }
+    .game-win-text{
+        font-size: 30px;
+        margin-bottom: 5px;
+    }
+
+    .start-game2,
+    .start-game1 {
+        font-size: 40px;
+    }
+    .score,
+    .scoreA{
+        font-size: 35px;
+    }
+}

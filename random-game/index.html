@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="modal">
+            <img class="img-modal" src="./img/armageddon.jpg" alt="arm">
+            <input type="text" placeholder="players' name" class="input" autofocus>
+            <button class="start-game">Start Game</button>
+        </div>
+        <!-- left side ***************************************************************** -->
+        <div class="left-side">
+            <div class="score-cont">
+                <span class="score-title">destroed</span>
+                <div class="score-destoy">
+                    <img class="ast-img" src="./img/astero.png" alt="">
+                    <div class="score"></div>
+                </div>
+            </div>
+            <div class="gun">choose your gun
+                <button class="pistolet btn"><img src="./img/lasergun_96100.png" alt="" class="ast-img">Standart</button>
+                <button class="pulemet btn"><img src="./img/satellite_96107.png" alt="" class="ast-img">Mega</button>
+            </div>
+            <button class="start">pause</button>
+        </div>
+        <!-- game area ************************************************************************* -->
+        <div class="wrapper">
+            <canvas id="game" width="600" height="550"></canvas>
+        <!-- modal game win  *****************************************************************-->
+        <div class="game-win">
+            <span class="game-win-text">You saved the planet!</span>
+            <button class="start-game1">Play again</button>
+        </div>
+        <!-- modal game over  *****************************************************************-->
+        <div class="game-over">
+            <span class="game-over-text">Game Over</span>
+            <button class="start-game2">Try again</button>
+        </div>
+        </div>
+
+        <div class="right-side">
+            <div class="score-cont">
+                <span class="score-title">lives</span>
+                <div class="score-cont-show">
+                    <img src="./img/atronaut_96141.png" alt="" class="ast-img">
+                    <div class="scoreA"></div>
+                </div>
+            </div>
+            <div class="game-results">
+                <button class="accord"><img src="./img/best.png" alt="" class="ast-img">Best results</button>
+                <div class="best-results hide res">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt quidem similique voluptatibus quaerat cupiditate quas itaque obcaecati eos iure mollitia? Autem nemo accusamus aliquam illum architecto ratione esse obcaecati dolorem!</div>
+                <button class="accord"><img src="./img/recent.png" alt="" class="ast-img">Recent results</button>
+                <div class="recent-results hide res">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, a. Tempora neque autem necessitatibus repudiandae deleniti. Officia laborum voluptatibus corrupti! Voluptas deserunt provident architecto repellat blanditiis. Laudantium quod assumenda perspiciatis!</div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <a target="_blank" href="https://github.com/RamanPr5?tab=repositories"><span class="git-logo"><img class="img git" src="./img/github-mark.svg" alt="git">Raman Pr</span></a>
+        <span class="footer-text">2023</span>
+        <a target="_blank" href="https://rs.school/js-stage0/"><span class="rs-logo"><img class="img" src="./img/logo_rs_text.svg" alt="rs"></span></a>
+    </footer>
+    <script src="./script.js"></script>
+</body>
+</html>
